@@ -6,7 +6,7 @@ export const validator = (schema) => {
             next();
         } catch (err) {
             return res.status(400).json({
-                error: err.error,
+                error: err.errors,
                 success: false,
                 message: "validation failed"
             });

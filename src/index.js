@@ -6,6 +6,8 @@ import connectDb from './config/dbConfig.js';
 const app = express();
 console.log(PORT);
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 app.use('/api', apiRouter);
 
 app.all('*', (req, res) => {
